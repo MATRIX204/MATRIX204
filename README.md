@@ -19,6 +19,5 @@ I’m a passionate creative developer with expertise in building websites, web a
 [![](https://visitcount.itsvg.in/api?id=MATRIX204&icon=0&color=0)](https://visitcount.itsvg.in)
 
 
-![Snake animation](https://raw.githubusercontent.com/MATRIX204/MATRIX204/output/snake.svg)
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
