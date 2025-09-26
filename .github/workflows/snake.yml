@@ -1,53 +1,26 @@
 name: GitHub Snake Game
 
 on:
+  # Runs once a day
   schedule:
     - cron: "0 0 * * *"
+  # Allows running manually
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 jobs:
-  generate:
+  build:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0   # fetch all branches & history
-
-      - name: Generate Snake Animation
+      - name: Generate Snake
         uses: Platane/snk@v3
         with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
-            dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+          github_user_name: MATRIX204
+          outputs: dist/snake.svg
+
+      - name: Push Snake to the output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Push Snake to Output Branch
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-          # Make sure we have the latest branches
-          git fetch origin
-
-          # Create output branch if it doesn't exist
-          if git show-ref --quiet refs/heads/output; then
-            git checkout output
-          else
-            git checkout --orphan output
-          fi
-
-          # Copy snake files
-          cp -r dist/* .
-
-          git add .
-          git commit -m "Update snake animation [skip ci]" || echo "No changes to commit"
-          git push origin output --force
