@@ -12,6 +12,10 @@ I’m a passionate creative developer with expertise in building websites, web a
 ![](https://nirzak-streak-stats.vercel.app/?user=MATRIX204&theme=tokyonight&hide_border=true)<br/>
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=MATRIX204&theme=tokyonight&hide_border=true&include_all_commits=false&count_private=false&layout=compact)
 
+![contrib-graph](https://github.com/MATRIX204/MATRIX204/raw/output/github-snake.svg#gh-light-mode-only)
+![contrib-graph](https://github.com/MATRIX204/MATRIX204/raw/output/github-snake-dark.svg#gh-dark-mode-only)
+
+
 ## 🏆 GitHub Trophies
 ![](https://github-profile-trophy.vercel.app/?username=MATRIX204&theme=radical&no-frame=false&no-bg=true&margin-w=4)
 
